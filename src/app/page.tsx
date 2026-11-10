@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { wedding, GIFTS, PHOTOS, HERO_PHOTOS } from "@/config/wedding";
 import { Heart } from "@/components/Heart";
+import { FloralDivider, FloralFrame, FloralCap } from "@/components/Floral";
 import { Faq } from "@/components/Faq";
 import { Itinerary } from "@/components/Itinerary";
 
@@ -35,19 +36,45 @@ export default function Home() {
           ))}
         </div>
 
-        <h1 className="font-display text-5xl leading-tight text-ink sm:text-7xl">
-          {wedding.partnerA}{" "}
-          <span className="font-script text-4xl sm:text-6xl">&amp;</span>{" "}
-          {wedding.partnerB}
-        </h1>
+        <FloralCap className="mb-2" />
 
-        <p className="eyebrow mt-5 text-ink-faint">{wedding.tagline}</p>
+        <div className="relative w-full max-w-md">
+          <FloralFrame />
+          <div className="px-[15%] py-20 sm:py-24">
+            <p className="eyebrow text-[0.68rem] text-ink-faint">
+              You are invited to the wedding of
+            </p>
 
-        <p className="mt-8 font-display text-3xl tracking-wide text-ink sm:text-4xl">
-          {wedding.dateShort}
-        </p>
+            <h1 className="mt-6">
+              <span className="block font-script text-5xl leading-[1.1] text-ink sm:text-6xl">
+                {wedding.partnerA.toLowerCase()}
+              </span>
+              <span className="eyebrow mt-1 block text-ink">
+                {wedding.partnerASurname}
+              </span>
+              <span className="my-2 block font-script text-3xl text-ink sm:text-4xl">
+                &amp;
+              </span>
+              <span className="block font-script text-5xl leading-[1.1] text-ink sm:text-6xl">
+                {wedding.partnerB.toLowerCase()}
+              </span>
+              <span className="eyebrow mt-1 block text-ink">
+                {wedding.partnerBSurname}
+              </span>
+            </h1>
 
-        <p className="eyebrow mt-6 text-ink-faint">{wedding.venueAddress}</p>
+            <p className="eyebrow mt-8 text-[0.68rem] leading-relaxed text-ink-soft">
+              {wedding.dateLong}
+            </p>
+            <p className="eyebrow mt-5 text-[0.68rem] leading-relaxed text-ink-soft">
+              {wedding.venue}
+              <br />
+              {wedding.venueStreet}
+            </p>
+          </div>
+        </div>
+
+        <FloralCap className="mt-2" flip />
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
           <Link href="/login" className="btn-primary">
@@ -65,7 +92,7 @@ export default function Home() {
       {/* ── Details ── */}
       <section id="details" className="border-t border-line bg-stone-light/50">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <div className="divider mb-12" />
+          <FloralDivider className="mb-12" />
           <h2 className="text-center font-display text-4xl text-ink">
             The Details
           </h2>
@@ -77,7 +104,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16 rounded-xl border border-line bg-white/50 px-6 py-10 text-center">
-            <Heart className="mx-auto mb-5 h-7 w-7 text-ink-faint" />
+            <FloralCap className="mx-auto mb-5" />
             <h3 className="font-display text-2xl text-ink">Your invitation</h3>
             <p className="mx-auto mt-3 max-w-md text-ink-soft">
               Head to{" "}
@@ -94,7 +121,7 @@ export default function Home() {
       {/* ── Our Wedding Day ── */}
       <section id="itinerary" className="border-t border-line">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <div className="divider mb-12" />
+          <FloralDivider className="mb-12" />
           <h2 className="text-center font-display text-4xl text-ink">
             Our Wedding Day
           </h2>
@@ -108,7 +135,7 @@ export default function Home() {
       {GALLERY.length > 0 && (
         <section className="border-t border-line bg-stone-light/50">
           <div className="mx-auto max-w-3xl px-6 py-24">
-            <div className="divider mb-12" />
+            <FloralDivider className="mb-12" />
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
               {GALLERY.map((photo) => (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -129,7 +156,7 @@ export default function Home() {
       {/* ── FAQs ── */}
       <section id="faq" className="border-t border-line">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <div className="divider mb-12" />
+          <FloralDivider className="mb-12" />
           <h2 className="text-center font-display text-4xl text-ink">
             Important Information
           </h2>
@@ -146,7 +173,7 @@ export default function Home() {
       {/* ── Gifts ── */}
       <section id="gifts" className="border-t border-line bg-stone-light/50">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <div className="divider mb-12" />
+          <FloralDivider className="mb-12" />
           <h2 className="text-center font-display text-4xl text-ink">Gifts</h2>
           <p className="mx-auto mt-10 max-w-xl text-center text-lg leading-relaxed text-ink-soft">
             {GIFTS}

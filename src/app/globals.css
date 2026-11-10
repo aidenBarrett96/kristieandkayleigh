@@ -15,7 +15,7 @@ body {
 
 /* Uppercase, letter-spaced label used for secondary text (matches the card) */
 .eyebrow {
-  @apply uppercase tracking-widest2 text-xs font-medium text-ink-soft;
+  @apply font-display uppercase tracking-widest2 text-sm font-medium text-ink-soft;
 }
 
 /* Thin centred divider */

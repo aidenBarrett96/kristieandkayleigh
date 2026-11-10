@@ -4,16 +4,22 @@
 
 export const wedding = {
   partnerA: "Kristie",
+  partnerASurname: "Howard",
   partnerB: "Kayleigh",
+  partnerBSurname: "Smith",
   // Short numeric date used in the hero, matching the save-the-date.
   dateShort: "21.08.2027",
   // Long form used in details sections.
   date: "Saturday, 21st August 2027",
+  // Spelled out, as printed on the invitation.
+  dateLong: "Saturday, August 21st, Twenty Twenty Seven",
   // Ceremony time. Guests are asked to arrive an hour earlier — see ITINERARY.
   time: "2:00 PM",
   arrival: "1:00 PM",
   venue: "The Manor",
-  venueAddress: "The Manor, Greasby, CH49 3NF",
+  venueAddress: "The Manor, 91 Greasby Road, Greasby CH49 3NF",
+  // Split as it appears on the card.
+  venueStreet: "91 Greasby Road, Greasby CH49 3NF",
   tagline: "are getting married",
   // RSVP cut-off shown to guests.
   rsvpBy: "Saturday, 1st May 2027",

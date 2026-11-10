@@ -7,6 +7,7 @@ import { Heart } from "@/components/Heart";
 import { RsvpForm } from "@/components/RsvpForm";
 import { PhotoUpload } from "@/components/PhotoUpload";
 import { Faq } from "@/components/Faq";
+import { FloralDivider } from "@/components/Floral";
 import { Itinerary } from "@/components/Itinerary";
 import { signOutGuest } from "./actions";
 
@@ -43,7 +44,7 @@ export default async function MePage() {
         <p className="eyebrow mt-2 text-ink-faint">{wedding.venueAddress}</p>
       </div>
 
-      <div className="divider my-12" />
+      <FloralDivider className="my-10" />
 
       <p className="text-center text-lg text-ink-soft">
         Hello <span className="text-ink">{guest.name}</span> — this is your page.
@@ -78,7 +79,7 @@ export default async function MePage() {
 
       {/* Details */}
       <section className="mt-12">
-        <div className="divider mb-10" />
+        <FloralDivider className="mb-8" />
         <div className="grid gap-8 sm:grid-cols-3">
           <Detail label="When" lines={[wedding.date, `Ceremony ${wedding.time}`]} />
           <Detail label="Where" lines={[wedding.venue, wedding.venueAddress]} />
@@ -89,7 +90,7 @@ export default async function MePage() {
       {/* Photos */}
       {photosOn && (
         <section className="mt-14">
-          <div className="divider mb-10" />
+          <FloralDivider className="mb-8" />
           <PhotoUpload />
           {guest.photos.length > 0 && (
             <div className="mt-6">
@@ -112,7 +113,7 @@ export default async function MePage() {
 
       {/* Our Wedding Day */}
       <section className="mt-14">
-        <div className="divider mb-10" />
+        <FloralDivider className="mb-8" />
         <h2 className="mb-8 text-center font-display text-2xl text-ink">
           Our Wedding Day
         </h2>
@@ -121,7 +122,7 @@ export default async function MePage() {
 
       {/* Important information */}
       <section className="mt-14">
-        <div className="divider mb-10" />
+        <FloralDivider className="mb-8" />
         <h2 className="mb-6 text-center font-display text-2xl text-ink">
           Important Information
         </h2>
@@ -130,7 +131,7 @@ export default async function MePage() {
 
       {/* Gifts */}
       <section className="mt-14">
-        <div className="divider mb-10" />
+        <FloralDivider className="mb-8" />
         <h2 className="mb-6 text-center font-display text-2xl text-ink">
           Gifts
         </h2>

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Pinyon_Script, Jost } from "next/font/google";
+import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
 import { wedding } from "@/config/wedding";
 import "./globals.css";
 
-const display = Playfair_Display({
+// The invitation is set in a letterspaced serif with a flowing script for
+// the names, so the site follows suit.
+const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-display",
 });
 
-const script = Pinyon_Script({
+const script = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-script",

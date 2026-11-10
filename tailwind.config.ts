@@ -5,18 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Matches the save-the-date: warm stone background, soft charcoal ink.
+        // Matches the printed invitation: warm cream card, black line-art ink.
         stone: {
-          DEFAULT: "#ECEAE6",
-          light: "#F4F2EF",
-          dark: "#E3E0DB",
+          DEFAULT: "#F6F1E6",
+          light: "#FBF8F1",
+          dark: "#EDE6D7",
         },
         ink: {
-          DEFAULT: "#3A3A38",
-          soft: "#5C5B58",
-          faint: "#8A8884",
+          DEFAULT: "#20201E",
+          soft: "#4A463F",
+          faint: "#8B8378",
         },
-        line: "#D6D2CC",
+        line: "#D9CFBC",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
