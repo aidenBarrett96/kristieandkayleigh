@@ -25,6 +25,9 @@ const sans = Jost({
 export const metadata: Metadata = {
   title: `${wedding.partnerA} & ${wedding.partnerB} — Wedding`,
   description: `Join us to celebrate the wedding of ${wedding.partnerA} & ${wedding.partnerB} on ${wedding.date}.`,
+  // Guests type the address from their invitation; nobody should arrive here
+  // from a search result, least of all by searching a guest's name.
+  robots: { index: false, follow: false, nocache: true },
 };
 
 export default function RootLayout({

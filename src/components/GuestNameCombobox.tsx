@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 type Option = { id: string; name: string };
 
 // Matches MIN_QUERY in /api/guests/search — no point asking before then.
-const MIN_QUERY = 2;
+const MIN_QUERY = 3;
 const DEBOUNCE_MS = 180;
 
 export function GuestNameCombobox() {
@@ -200,8 +200,8 @@ export function GuestNameCombobox() {
 
       {noMatches && (
         <p className="mt-1.5 text-sm text-ink-faint">
-          No invitation matches that name yet — keep typing, or check the
-          spelling on your invite.
+          No invitation matches that yet — try your full name as it appears on
+          your invitation.
         </p>
       )}
 
