@@ -13,9 +13,9 @@ export const wedding = {
   date: "Saturday, 21st August 2027",
   // Spelled out, as printed on the invitation.
   dateLong: "Saturday, August 21st, Twenty Twenty Seven",
-  // Ceremony time. Guests are asked to arrive an hour earlier — see ITINERARY.
-  time: "2:00 PM",
-  arrival: "1:00 PM",
+  // The time printed on the invitation — when guests are asked to be there.
+  // The ceremony itself starts at 2:00 PM; see ITINERARY for the running order.
+  time: "1:00 PM",
   venue: "The Manor",
   venueAddress: "The Manor, 91 Greasby Road, Greasby CH49 3NF",
   // Split as it appears on the card.

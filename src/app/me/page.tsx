@@ -81,7 +81,7 @@ export default async function MePage() {
       <section className="mt-12">
         <FloralDivider className="mb-8" />
         <div className="grid gap-8 sm:grid-cols-3">
-          <Detail label="When" lines={[wedding.date, `Ceremony ${wedding.time}`]} />
+          <Detail label="When" lines={[wedding.date, `From ${wedding.time}`]} />
           <Detail label="Where" lines={[wedding.venue, wedding.venueAddress]} />
           <Detail label="RSVP by" lines={[wedding.rsvpBy]} />
         </div>
