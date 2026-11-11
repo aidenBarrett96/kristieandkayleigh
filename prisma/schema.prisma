@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// One invitation. Each invited household/guest gets a unique `token`
+// that powers their personal QR code + pre-filled RSVP link.
+model Guest {
+  id           String   @id @default(cuid())
+  token        String   @unique // used in the URL / QR: /rsvp/[token]
+  name         String // primary invitee name, pre-filled on the form
+  email        String?
+  // how many people total this invitation may bring (including the primary)
+  maxPartySize Int      @default(1)
+  createdAt    DateTime @default(now())
+
+  rsvp         Rsvp?
+  songRequests SongRequest[]
+  photos       Photo[]
+}
+
+// Photos uploaded by guests after the wedding. Files live in Vercel Blob;
+// we store the URL + pathname here. Visible to the couple (admin) only.
+model Photo {
+  id        String   @id @default(cuid())
+  guestId   String
+  guest     Guest    @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  url       String // public Blob URL
+  pathname  String // Blob pathname, used for deletion
+  caption   String?
+  createdAt DateTime @default(now())
+}
+
+// Single-row settings table (id is always "app").
+model Setting {
+  id            String  @id @default("app")
+  photosEnabled Boolean @default(false)
+}
+
+// The submitted response for an invitation (one per Guest).
+model Rsvp {
+  id          String     @id @default(cuid())
+  guestId     String     @unique
+  guest       Guest      @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  attending   Boolean
+  message     String? // optional note to the couple
+  submittedAt DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  attendees   Attendee[]
+}
+
+// One row per person actually attending under an invitation, with their meal.
+model Attendee {
+  id       String  @id @default(cuid())
+  rsvpId   String
+  rsvp     Rsvp    @relation(fields: [rsvpId], references: [id], onDelete: Cascade)
+  name     String
+  meal     String // value from the MEAL_OPTIONS config
+  dietary  String? // allergies / dietary notes
+}
+
+model SongRequest {
+  id        String   @id @default(cuid())
+  guestId   String
+  guest     Guest    @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  title     String
+  artist    String?
+  createdAt DateTime @default(now())
+}

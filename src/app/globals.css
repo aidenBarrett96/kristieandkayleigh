@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: theme("colors.stone.DEFAULT");
+  color: theme("colors.ink.DEFAULT");
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Uppercase, letter-spaced label used for secondary text (matches the card) */
+.eyebrow {
+  @apply font-display uppercase tracking-widest2 text-sm font-medium text-ink-soft;
+}
+
+/* Thin centred divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: theme("colors.ink.faint");
+}
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 2.5rem;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+@layer components {
+  .field-label {
+    @apply block text-sm font-medium text-ink-soft mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-md border border-line bg-white/60 px-4 py-2.5 text-ink
+      placeholder:text-ink-faint/70 outline-none transition
+      focus:border-ink/40 focus:ring-2 focus:ring-ink/10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-8 py-3
+      text-sm font-medium uppercase tracking-widest text-stone-light shadow-sm transition
+      hover:bg-ink-soft focus:outline-none focus:ring-2 focus:ring-ink/30 disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-line
+      px-6 py-2.5 text-sm font-medium uppercase tracking-widest text-ink-soft transition
+      hover:border-ink/40 hover:bg-white/40;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-stone-light/70 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)];
+  }
+}
