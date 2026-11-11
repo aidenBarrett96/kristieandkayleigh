@@ -32,7 +32,8 @@ export const PHOTOS: { src: string; alt: string }[] = [
   { src: "/photos/03-holiday.jpg", alt: "Kristie and Kayleigh on holiday" },
   { src: "/photos/04-party.jpg", alt: "Kristie and Kayleigh at their engagement party" },
   { src: "/photos/05-drinks.jpg", alt: "Kristie and Kayleigh out for drinks" },
-  { src: "/photos/06-little-us.jpg", alt: "Kristie and Kayleigh as children" },
+  { src: "/photos/06-little-us-1.jpg", alt: "A young girl in a veil holding pink roses" },
+  { src: "/photos/07-little-us-2.jpg", alt: "A young boy in a gold waistcoat" },
 ];
 
 // The three that lead the homepage, in display order.

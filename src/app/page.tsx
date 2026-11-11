@@ -40,8 +40,9 @@ export default function Home() {
 
         <div className="relative w-full max-w-md">
           <FloralFrame />
-          <div className="px-[15%] py-20 sm:py-24">
-            <p className="eyebrow text-[0.68rem] text-ink-faint">
+          {/* Generous inset: an ellipse is narrowest where this text sits. */}
+          <div className="px-[17%] py-24 sm:py-28">
+            <p className="eyebrow mx-auto max-w-[88%] text-[0.68rem] text-ink-faint">
               You are invited to the wedding of
             </p>
 
@@ -118,41 +119,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Our Wedding Day ── */}
-      <section id="itinerary" className="border-t border-line">
-        <div className="mx-auto max-w-3xl px-6 py-24">
-          <FloralDivider className="mb-12" />
-          <h2 className="text-center font-display text-4xl text-ink">
-            Our Wedding Day
-          </h2>
-          <div className="mt-12">
-            <Itinerary />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Gallery ── */}
-      {GALLERY.length > 0 && (
-        <section className="border-t border-line bg-stone-light/50">
-          <div className="mx-auto max-w-3xl px-6 py-24">
-            <FloralDivider className="mb-12" />
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              {GALLERY.map((photo) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={photo.src}
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[3/4] w-full rounded-lg border border-line object-cover shadow-sm"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ── FAQs ── */}
       <section id="faq" className="border-t border-line">
         <div className="mx-auto max-w-3xl px-6 py-24">
@@ -169,6 +135,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Our Wedding Day ── */}
+      <section id="itinerary" className="border-t border-line bg-stone-light/50">
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <FloralDivider className="mb-12" />
+          <h2 className="text-center font-display text-4xl text-ink">
+            Our Wedding Day
+          </h2>
+          <div className="mt-12">
+            <Itinerary />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Gallery ── */}
+      {GALLERY.length > 0 && (
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-3xl px-6 py-24">
+            <FloralDivider className="mb-12" />
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {GALLERY.map((photo) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={photo.src}
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/4] w-full rounded-lg border border-line object-cover shadow-sm"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Gifts ── */}
       <section id="gifts" className="border-t border-line bg-stone-light/50">
